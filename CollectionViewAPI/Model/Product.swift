@@ -12,5 +12,5 @@ struct Product {
     let product_id: Int
     let name: String
     let price: Int
-    let image: UIImage
+    let image: UIImageView
 }
