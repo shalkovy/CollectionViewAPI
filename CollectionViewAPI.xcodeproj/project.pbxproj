@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9574EDE7D27BA9BB169201D9 /* Pods_CollectionViewAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00718479C1A9F616B42071CA /* Pods_CollectionViewAPI.framework */; };
+		D19E5A9522CD2B9000314FDC /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19E5A9422CD2B9000314FDC /* ProductCollectionViewCell.swift */; };
 		D1F16C4B22CB7AC6009A56B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F16C4A22CB7AC6009A56B1 /* AppDelegate.swift */; };
 		D1F16C5022CB7AC6009A56B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F16C4E22CB7AC6009A56B1 /* Main.storyboard */; };
 		D1F16C5222CB7AC9009A56B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F16C5122CB7AC9009A56B1 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		00718479C1A9F616B42071CA /* Pods_CollectionViewAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionViewAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19E5A9422CD2B9000314FDC /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1F16C4722CB7AC6009A56B1 /* CollectionViewAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F16C4A22CB7AC6009A56B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1F16C4F22CB7AC6009A56B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 				F3BDB3B18AE370846CB3892D /* Pods-CollectionViewAPI.debug.xcconfig */,
 				F7224F15D2FBAE6C490C4E84 /* Pods-CollectionViewAPI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F16C4E22CB7AC6009A56B1 /* Main.storyboard */,
+				D19E5A9422CD2B9000314FDC /* ProductCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +254,7 @@
 			files = (
 				D1F16C5D22CB7B7E009A56B1 /* ProductsCollectionViewController.swift in Sources */,
 				D1F16C4B22CB7AC6009A56B1 /* AppDelegate.swift in Sources */,
+				D19E5A9522CD2B9000314FDC /* ProductCollectionViewCell.swift in Sources */,
 				D1F16C6222CB7FB9009A56B1 /* Product.swift in Sources */,
 				D1F16C6522CB80EA009A56B1 /* Networking.swift in Sources */,
 			);

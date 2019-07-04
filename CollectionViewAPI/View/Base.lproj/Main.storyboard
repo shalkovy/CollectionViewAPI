@@ -24,20 +24,55 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Knb-pb-J6u">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Knb-pb-J6u" customClass="ProductCollectionViewCell" customModule="CollectionViewAPI" customModuleProvider="target">
                                 <rect key="frame" x="80.5" y="0.0" width="253" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="249"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6w1-9z-Uqg">
-                                            <rect key="frame" x="7" y="7" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6w1-9z-Uqg">
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="124.5"/>
                                         </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-qy-VeB">
+                                            <rect key="frame" x="0.0" y="124.5" width="253" height="124.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product name label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-O1-evL">
+                                                    <rect key="frame" x="52.5" y="0.0" width="148" height="57.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tg7-Py-x8T">
+                                                    <rect key="frame" x="87" y="67.5" width="79.5" height="57"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tg7-Py-x8T" firstAttribute="height" secondItem="fKT-O1-evL" secondAttribute="height" id="BI7-Kq-baQ"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DAY-qy-VeB" secondAttribute="bottom" id="1ED-Se-W7P"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAY-qy-VeB" secondAttribute="trailing" id="2kz-bn-Fqi"/>
+                                    <constraint firstItem="DAY-qy-VeB" firstAttribute="top" secondItem="6w1-9z-Uqg" secondAttribute="bottom" id="BcU-Cm-NRy"/>
+                                    <constraint firstItem="DAY-qy-VeB" firstAttribute="leading" secondItem="Knb-pb-J6u" secondAttribute="leading" id="PTc-sH-TEf"/>
+                                    <constraint firstItem="6w1-9z-Uqg" firstAttribute="leading" secondItem="Knb-pb-J6u" secondAttribute="leading" id="fkx-ZB-MIO"/>
+                                    <constraint firstItem="6w1-9z-Uqg" firstAttribute="centerX" secondItem="Knb-pb-J6u" secondAttribute="centerX" id="lD8-km-ZfJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6w1-9z-Uqg" secondAttribute="trailing" id="qbP-Ew-Hvb"/>
+                                    <constraint firstItem="6w1-9z-Uqg" firstAttribute="top" secondItem="Knb-pb-J6u" secondAttribute="top" id="swt-dC-uVN"/>
+                                    <constraint firstItem="DAY-qy-VeB" firstAttribute="height" secondItem="6w1-9z-Uqg" secondAttribute="height" id="vOm-ux-eBK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="priceLabel" destination="tg7-Py-x8T" id="gqf-ul-k96"/>
+                                    <outlet property="productImageView" destination="6w1-9z-Uqg" id="iDF-tV-eb3"/>
+                                    <outlet property="productNameLabel" destination="fKT-O1-evL" id="QjX-Wz-Ij3"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
