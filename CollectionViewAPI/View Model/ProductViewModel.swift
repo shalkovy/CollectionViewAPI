@@ -13,12 +13,14 @@ struct ProductViewModel {
     let productName: String
     let productPrice: String
     let productID: Int
+    let imageURL: URL?
     
     //Dependency injection
     init(product: Product) {
         self.productName = product.name
         self.productPrice = product.price
         self.productID = product.product_id
+        self.imageURL = product.imageURL
     }
     
 }

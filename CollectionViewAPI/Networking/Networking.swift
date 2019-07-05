@@ -9,45 +9,36 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import SDWebImage
 
 class Networking: NSObject {
     static let shared = Networking()
     
-    let url = "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list"
-    var products = [Product]()
-//    var delegate: ProductsCollectionViewController?
+    let productsURL = "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list"
     
-    override init() {
-        super.init()
-//        self.makeRequest()
-    }
-    
-    func makeRequest(completion: @escaping ([Product]?, Error?) -> ()) {
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+    func fetchProducts(completion: @escaping ([Product]?, Error?) -> ()) {
+        Alamofire.request(productsURL, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)["products"]
-                self.createProducts(from: json)
+                
+                completion(self.createProducts(from: json), nil)
             } else {
+                completion(nil, response.result.error!)
                 print("Error \(response.result.error!)")
             }
         }
     }
     
-    func createProducts(from json: JSON) {
-//        var array = [Product]()
+    func createProducts(from json: JSON) -> [Product] {
+        var array = [Product]()
         json.array?.forEach({ (json) in
-//            let imageURL = URL(string: json["image"].stringValue)
-//            print(json)
-//            let image = UIImageView()
+            let imageURL = URL(string: json["image"].stringValue)
             let price = json["price"].stringValue
             let productID = json["product_id"].intValue
-            
             let name = json["name"].stringValue
-//            image.sd_setImage(with: imageURL)
-            let product = Product(product_id: productID, name: name, price: price) // imageURL: imageURL)
-            products.append(product)
-            print(products.count)
+            
+            let product = Product(product_id: productID, name: name, price: price, imageURL: imageURL)
+            array.append(product)
         })
+        return array
     }
 }

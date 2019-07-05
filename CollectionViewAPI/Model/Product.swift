@@ -6,13 +6,11 @@
 //  Copyright © 2019 Dima Shelkov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct Product {
     let product_id: Int
     let name: String
     let price: String
-//    let image: UIImageView
-//    let imageURL: URL?
-
+    let imageURL: URL?
 }

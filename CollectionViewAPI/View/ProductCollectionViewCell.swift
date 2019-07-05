@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
@@ -14,12 +15,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
         didSet {
             productNameLabel.text = product.productName
             priceLabel.text = "\(product.productPrice)"
-//            productImageView.image =
+            productImageView.sd_setImage(with: product.imageURL, completed: nil)
         }
     }
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-
 }
