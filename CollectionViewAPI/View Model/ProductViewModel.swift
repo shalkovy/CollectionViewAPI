@@ -15,7 +15,7 @@ struct ProductViewModel {
     let productID: Int
     let imageURL: URL?
     
-    //Dependency injection
+    // Dependency injection
     init(product: Product) {
         self.productName = product.name
         self.productPrice = product.price

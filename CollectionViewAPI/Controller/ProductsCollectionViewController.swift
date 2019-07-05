@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ProductsCollectionViewController: UICollectionViewController {
     
     private let reuseIdentifier = "Cell"
@@ -21,16 +19,20 @@ class ProductsCollectionViewController: UICollectionViewController {
         fetchProductsData()
     }
     
- 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toDetail", sender: indexPath)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = sender as? IndexPath else { return }
+        let product = productViewModels[indexPath.item]
+        let id = product.productID
+        
+        let detailVC = segue.destination as? DetailProductViewController
+        detailVC?.navigationItem.title = product.productName
+        detailVC?.id = id
+    }
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,11 +46,10 @@ class ProductsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> ProductCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
             as! ProductCollectionViewCell
-        cell.backgroundColor = .white
+        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let product = productViewModels[indexPath.item]
         cell.product = product
         return cell
-        
     }
     
     // MARK: - Methods
