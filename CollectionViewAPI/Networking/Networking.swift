@@ -11,13 +11,19 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
-class Networking {
+class Networking: NSObject {
+    static let shared = Networking()
     
     let url = "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list"
     var products = [Product]()
-    var delegate: ProductsCollectionViewController?
+//    var delegate: ProductsCollectionViewController?
     
-    func makeRequest() {
+    override init() {
+        super.init()
+//        self.makeRequest()
+    }
+    
+    func makeRequest(completion: @escaping ([Product]?, Error?) -> ()) {
         Alamofire.request(url, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)["products"]
@@ -29,17 +35,19 @@ class Networking {
     }
     
     func createProducts(from json: JSON) {
+//        var array = [Product]()
         json.array?.forEach({ (json) in
+//            let imageURL = URL(string: json["image"].stringValue)
 //            print(json)
-            let image = UIImageView()
-            let price = json["price"].intValue
+//            let image = UIImageView()
+            let price = json["price"].stringValue
             let productID = json["product_id"].intValue
-            let imageURL = URL(string: json["image"].stringValue)
+            
             let name = json["name"].stringValue
-            image.sd_setImage(with: imageURL)
-            let product = Product(product_id: productID, name: name, price: price, image: image)
+//            image.sd_setImage(with: imageURL)
+            let product = Product(product_id: productID, name: name, price: price) // imageURL: imageURL)
             products.append(product)
+            print(products.count)
         })
-        delegate?.collectionView.reloadData()
     }
 }

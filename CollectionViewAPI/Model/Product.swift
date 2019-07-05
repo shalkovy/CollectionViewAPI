@@ -11,6 +11,8 @@ import UIKit
 struct Product {
     let product_id: Int
     let name: String
-    let price: Int
-    let image: UIImageView
+    let price: String
+//    let image: UIImageView
+//    let imageURL: URL?
+
 }

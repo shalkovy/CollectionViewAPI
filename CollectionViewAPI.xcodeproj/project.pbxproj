@@ -16,6 +16,7 @@
 		D1F16C5D22CB7B7E009A56B1 /* ProductsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F16C5C22CB7B7E009A56B1 /* ProductsCollectionViewController.swift */; };
 		D1F16C6222CB7FB9009A56B1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F16C6122CB7FB9009A56B1 /* Product.swift */; };
 		D1F16C6522CB80EA009A56B1 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F16C6422CB80EA009A56B1 /* Networking.swift */; };
+		D1F8BF5322CF4C7A003F517C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F8BF5222CF4C7A003F517C /* ProductViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D1F16C5C22CB7B7E009A56B1 /* ProductsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewController.swift; sourceTree = "<group>"; };
 		D1F16C6122CB7FB9009A56B1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D1F16C6422CB80EA009A56B1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D1F8BF5222CF4C7A003F517C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F3BDB3B18AE370846CB3892D /* Pods-CollectionViewAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionViewAPI.debug.xcconfig"; path = "Target Support Files/Pods-CollectionViewAPI/Pods-CollectionViewAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		F7224F15D2FBAE6C490C4E84 /* Pods-CollectionViewAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionViewAPI.release.xcconfig"; path = "Target Support Files/Pods-CollectionViewAPI/Pods-CollectionViewAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 				D1F16C6622CB80F0009A56B1 /* Networking */,
 				D1F16C6322CB7FBF009A56B1 /* Model */,
 				D1F16C5F22CB7F8D009A56B1 /* View */,
+				D1F8BF5422CF4C90003F517C /* View Model */,
 				D1F16C6022CB7F97009A56B1 /* Controller */,
 				D1F16C5E22CB7F06009A56B1 /* Supporting Files */,
 				D1F16C5622CB7AC9009A56B1 /* Info.plist */,
@@ -135,6 +138,14 @@
 				D1F16C6422CB80EA009A56B1 /* Networking.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D1F8BF5422CF4C90003F517C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1F8BF5222CF4C7A003F517C /* ProductViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			files = (
 				D1F16C5D22CB7B7E009A56B1 /* ProductsCollectionViewController.swift in Sources */,
 				D1F16C4B22CB7AC6009A56B1 /* AppDelegate.swift in Sources */,
+				D1F8BF5322CF4C7A003F517C /* ProductViewModel.swift in Sources */,
 				D19E5A9522CD2B9000314FDC /* ProductCollectionViewCell.swift in Sources */,
 				D1F16C6222CB7FB9009A56B1 /* Product.swift in Sources */,
 				D1F16C6522CB80EA009A56B1 /* Networking.swift in Sources */,
